@@ -1,0 +1,103 @@
+.btn-inline {
+  border: none;
+  color: var(--Primary);
+  font-size: inherit;
+  padding: 4px;
+  background-color: transparent;
+  display: inline-block;
+  cursor: pointer;
+  border-bottom: 1px solid currentColor;
+  transition: all 0.2s;
+  text-transform: uppercase;
+
+  & span {
+    margin-left: 3px;
+    transition: margin-left 0.2s;
+  }
+
+  &:hover {
+    color: var(--Grey-dark-2);
+    animation: pulsate 1s infinite;
+
+    span {
+      margin-left: 8px;
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn {
+  font-size: 1.5rem;
+  border: none;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-radius: 100px;
+  background-image: linear-gradient(
+    to right,
+    var(--Primary-light),
+    var(--Primary-dark)
+  );
+  color: #fff;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+
+  &__visible {
+    display: inline-block;
+    padding: 2rem 7.5rem;
+    height: 100%;
+    transition: all 0.2s;
+  }
+
+  &__invisible {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: -100%;
+    padding: 2rem 0rem;
+    height: 100%;
+    width: 100%;
+    transition: all 0.2s;
+  }
+
+  &:hover {
+    background-image: linear-gradient(
+      to left,
+      var(--Primary-light),
+      var(--Primary-dark)
+    );
+    animation: pulsate 1s infinite;
+  }
+
+  &:hover &__visible {
+    transform: translateY(100%);
+  }
+
+  &:hover &__invisible {
+    top: 0;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 1rem 5rem rgba(0, 0, 0, 0.3);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+}

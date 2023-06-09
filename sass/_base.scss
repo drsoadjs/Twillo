@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+
+  @media only screen and (max-width: $bp-large) {
+    font-size: 58%;
+  }
+}
+
+body {
+  background-image: linear-gradient(
+    to right bottom,
+    var(--Primary-light),
+    var(--Primary-dark)
+  );
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--Grey-dark-2);
+  font-family: "Open Sans", sans-serif;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 120rem;
+  margin: 8rem auto;
+  background-color: var(--Grey-light-2);
+  box-shadow: var(--shadow-big);
+  min-height: 50rem;
+
+  @media only screen and (max-width: $bp-largest) {
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+}
